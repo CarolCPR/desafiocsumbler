@@ -4,7 +4,7 @@ const port = 3000;
 
 app.get('*', (req, res, next) => {
   if (req.headers['x-forwarded-proto'] != 'https') {
-    res.redirect("https://" + req.headers.host + req.url);
+     res.redirect("https://" + req.headers.host + req.url);
   } else {
       next();
   }
